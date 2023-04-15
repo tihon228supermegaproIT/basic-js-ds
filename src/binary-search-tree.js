@@ -1,49 +1,62 @@
+class Stack {
+  constructor() {
+    this.items = [];
+  }
+
+  push(element) {
+    this.items.push(element);
+  }
+
+  pop() {
+    if (this.items.length === 0) {
+      return undefined;
+    }
+    return this.items.pop();
+  }
+
+  peek() {
+    if (this.items.length === 0) {
+      return undefined;
+    }
+    return this.items[this.items.length - 1];
+  }
+}
+
+module.exports = {
+  Stack
+};
+
 const { NotImplementedError } = require('../extensions/index.js');
 
-// const { Node } = require('../extensions/list-tree.js');
-
 /**
-* Implement simple binary search tree according to task description
-* using Node from extensions
-*/
-class BinarySearchTree {
-
-  root() {
+ * Implement the Stack with a given interface via array.
+ *
+ * @example
+ * const stack = new Stack();
+ *
+ * stack.push(1); // adds the element to the stack
+ * stack.peek(); // returns the peek, but doesn't delete it, returns 1
+ * stack.pop(); // returns the top element from stack and deletes it, returns 1
+ * stack.pop(); // undefined
+ *
+ */
+class Stack {
+  push(/* element */) {
     throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   }
 
-  add(/* data */) {
+  pop() {
     throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   }
 
-  has(/* data */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
-  }
-
-  find(/* data */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
-  }
-
-  remove(/* data */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
-  }
-
-  min() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
-  }
-
-  max() {
+  peek() {
     throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   }
 }
 
 module.exports = {
-  BinarySearchTree
+  Stack
 };
