@@ -1,62 +1,130 @@
-class Stack {
-  constructor() {
-    this.items = [];
-  }
+class BinarySearchTree {
 
-  push(element) {
-    this.items.push(element);
-  }
-
-  pop() {
-    if (this.items.length === 0) {
-      return undefined;
+    constructor() {
+      this.mainNode = null;
     }
-    return this.items.pop();
-  }
-
-  peek() {
-    if (this.items.length === 0) {
-      return undefined;
+  
+    root() {
+      return this.mainNode;
     }
-    return this.items[this.items.length - 1];
+  
+    add(data) {
+      const newNode = new Node(data);
+      
+      if (this.mainNode === null) {
+        this.mainNode = newNode;
+        return this;
+      } 
+      
+      let tempNode = this.mainNode;
+  
+      while (tempNode) {
+        if (newNode.data === tempNode.data) {
+          return this;
+        }
+  
+        if (newNode.data < tempNode.data) {
+          if (tempNode.left === null) {
+            tempNode.left = newNode;
+            return this;
+          }
+          tempNode = tempNode.left;
+        } else {
+          if (tempNode.right === null) {
+            tempNode.right = newNode;
+            return this;
+          }
+          tempNode = tempNode.right;
+        }
+      }
+    }
+  
+    has(/* data */) {
+      throw new NotImplementedError('Not implemented');
+      // remove line with error and write your code here
+    }
+  
+    find(/* data */) {
+      throw new NotImplementedError('Not implemented');
+      // remove line with error and write your code here
+    }
+  
+    remove(/* data */) {
+      throw new NotImplementedError('Not implemented');
+      // remove line with error and write your code here
+    }
+  
+    min(/* node */) {
+      throw new NotImplementedError('Not implemented');
+      // remove line with error and write your code here
+    }
+  
+    max(/* node */) {
+      throw new NotImplementedError('Not implemented');
+      // remove line with error and write your code here
+    }
+  
   }
-}
-
-module.exports = {
-  Stack
-};
+  
+  class Node {
+    constructor(data) {
+      this.data = data;
+      this.left = null;
+      this.right = null;
+    }
+  };
+  
+  module.exports = {
+    BinarySearchTree,
+    Node
+  };
 
 const { NotImplementedError } = require('../extensions/index.js');
 
+// const { Node } = require('../extensions/list-tree.js');
+
 /**
- * Implement the Stack with a given interface via array.
- *
- * @example
- * const stack = new Stack();
- *
- * stack.push(1); // adds the element to the stack
- * stack.peek(); // returns the peek, but doesn't delete it, returns 1
- * stack.pop(); // returns the top element from stack and deletes it, returns 1
- * stack.pop(); // undefined
- *
- */
-class Stack {
-  push(/* element */) {
+* Implement simple binary search tree according to task description
+* using Node from extensions
+*/
+class BinarySearchTree {
+
+  root() {
     throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   }
 
-  pop() {
+  add(/* data */) {
     throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   }
 
-  peek() {
+  has(/* data */) {
+    throw new NotImplementedError('Not implemented');
+    // remove line with error and write your code here
+  }
+
+  find(/* data */) {
+    throw new NotImplementedError('Not implemented');
+    // remove line with error and write your code here
+  }
+
+  remove(/* data */) {
+    throw new NotImplementedError('Not implemented');
+    // remove line with error and write your code here
+  }
+
+  min() {
+    throw new NotImplementedError('Not implemented');
+    // remove line with error and write your code here
+  }
+
+  max() {
     throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   }
 }
 
 module.exports = {
-  Stack
+  BinarySearchTree
 };
